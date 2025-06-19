@@ -9,11 +9,7 @@ namespace C__Fundamentals.Basic
 {
     internal class MainClass
     {
-        //Things covered in this file:
-        //    variable and data types
-        //    conditional statements
-        //    Loops
-        //    methods
+
         static void Main()
         {
             //Functions
