@@ -9,15 +9,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Basic\Arrays\" />
-    <Folder Include="Basic\Inheritance\" />
-    <Folder Include="Basic\Abstraction\" />
-    <Folder Include="Basic\Namespace\" />
-    <Folder Include="Basic\Exception Handling\" />
-    <Folder Include="Basic\Collections\" />
-    <Folder Include="Basic\Practice Programs\" />
-    <Folder Include="Basic\Strings\" />
-    <Folder Include="Basic\Polymorphism\" />
+    <Folder Include="Basic\Classes And Objects\" />
   </ItemGroup>
 
 </Project>
