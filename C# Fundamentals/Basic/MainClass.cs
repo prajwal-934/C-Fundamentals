@@ -20,6 +20,7 @@ namespace C__Fundamentals.Basic
             ExampleFunction fun = new ExampleFunction();
             string result = fun.Show("John");
             Console.WriteLine(result);
+            ExampleFunction.Run();
 
         }
 
