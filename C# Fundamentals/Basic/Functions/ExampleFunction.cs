@@ -14,13 +14,5 @@ namespace C__Fundamentals.Basic.Functions
             return $"Hello {message}";
         }
 
-
-        static void Main(string[] args)
-        {
-            ExampleFunction example = new ExampleFunction();
-            string messageResult = example.Show("John");
-            Console.WriteLine(messageResult);
-
-        }
     }
 }
