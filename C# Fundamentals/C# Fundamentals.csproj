@@ -8,4 +8,10 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Compile Remove="Basic\Classes And Objects\**" />
+    <EmbeddedResource Remove="Basic\Classes And Objects\**" />
+    <None Remove="Basic\Classes And Objects\**" />
+  </ItemGroup>
+
 </Project>
