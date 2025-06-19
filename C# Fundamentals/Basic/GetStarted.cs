@@ -15,14 +15,14 @@ namespace C__Fundamentals.Basic
         //    methods
         static void Main()
         {
-            Console.WriteLine("Hello World");
+            Console.WriteLine("Hello World 2");
 
             //data types
             int age = 25;
             double price = 19.99;
             char grade = 'A';
             string name = "Alice";
-            bool isHappy = true;
+            bool isPresent = true;
             
             //string manupulation 
             int x = 10;
@@ -39,7 +39,8 @@ namespace C__Fundamentals.Basic
             Loops();
             SwitchCase();
             GreetUser(user);
-            Console.WriteLine("Sum of x and y is "+Sum(x, y));
+            Console.WriteLine("Sum of x and y is " + Sum(x, y));
+            Console.WriteLine("Goodbye User");
         }
 
         static void Conditional()
