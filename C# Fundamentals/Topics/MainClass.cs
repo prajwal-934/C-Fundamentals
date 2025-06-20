@@ -14,9 +14,7 @@ namespace C__Fundamentals.Basic
         static void Main()
         {
             
-            Employee john = new Employee();
-            john.salary = 90000;
-            john.name = "John";
+            Employee john = new Employee("#0001","John",3000,"IT");            
             john.displaySalary();
             john.displayName();
 

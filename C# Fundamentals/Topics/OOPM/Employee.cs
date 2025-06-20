@@ -8,10 +8,18 @@ namespace C__Fundamentals.Topics.OOPM
 {
     internal class Employee
     {
-        public string employeeId;
-        public string name;
-        public int salary;
-        public string department;
+         string employeeId;
+         string name;
+         int salary;
+         string department;
+
+        public Employee(string employeeId , string name,  int salary , string department)
+        {
+            this.employeeId = employeeId;
+            this.name = name;
+            this.salary = salary;
+            this.department = department;
+        } 
 
 
         public void displayName()
