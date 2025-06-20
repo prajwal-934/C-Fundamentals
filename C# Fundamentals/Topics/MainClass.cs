@@ -1,4 +1,5 @@
 ﻿using C__Fundamentals.Basic.Functions;
+using C__Fundamentals.Topics.OOPM;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -12,11 +13,12 @@ namespace C__Fundamentals.Basic
 
         static void Main()
         {
-            //Functions
-            ExampleFunction fun = new ExampleFunction();
-            string result = fun.Show("John");
-            Console.WriteLine(result);
-            ExampleFunction.Run();
+            
+            Employee john = new Employee();
+            john.salary = 90000;
+            john.name = "John";
+            john.displaySalary();
+            john.displayName();
 
         }
 
