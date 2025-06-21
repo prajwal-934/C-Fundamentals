@@ -13,10 +13,19 @@ namespace C__Fundamentals.Basic
 
         static void Main()
         {
-            
-            Employee john = new Employee("#0001","John",3000,"IT");            
-            john.displaySalary();
-            john.displayName();
+
+            Vehicle v = new Vehicle("Tata", "Nexon", 2020, 200);
+            v.ShowDetails();
+
+            Console.WriteLine();
+
+            Car c = new Car("Tata", "Nexon", 2020, 200, "Gas", 7);
+            c.ShowDetails();
+
+            Console.WriteLine();
+
+            ElectricVehicle ev = new ElectricVehicle("Tata", "Nexon", 2020, 200, "Gas", 7,"250Kwh");
+            ev.ShowDetails();
 
         }
 

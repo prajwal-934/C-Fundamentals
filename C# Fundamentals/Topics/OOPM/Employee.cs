@@ -8,10 +8,18 @@ namespace C__Fundamentals.Topics.OOPM
 {
     internal class Employee
     {
-         string employeeId;
-         string name;
-         int salary;
-         string department;
+        string employeeId;
+        string name;
+        int salary;
+        string department;
+        public int age;
+
+        public int Age
+        {
+            get { return age; }
+            set { age = value; }
+        }
+         
 
         public Employee(string employeeId , string name,  int salary , string department)
         {
