@@ -6,49 +6,46 @@ using System.Threading.Tasks;
 
 namespace C__Fundamentals.Topics.OOPM
 {
-    internal abstract class Vehicle
+    internal interface IVehicle
     {
         public string Make { get; set; }
         public string Model { get; set; }
         public int Year { get; set; }
         public int Speed { get; set; }
 
-        public Vehicle(string make, string model, int year, int speed)
+        public  void Run();
+
+
+        public void ShowDetails();
+    }
+
+    class Car : IVehicle
+    {
+        public string FuelType { get; set; }
+        public int SittingCapacity { get; set; }
+        public string Make { get; set; }
+        public string Model { get; set; }
+        public int Year { get; set; }
+        public int Speed { get; set; }
+
+
+        public Car(string make, string model, int year, int speed, string fuelType, int sittingCapacity)
         {
+            FuelType = fuelType;
+            SittingCapacity = sittingCapacity;
             Make = make;
             Model = model;
             Year = year;
             Speed = speed;
         }
 
-        public abstract void Run();
-    
-
         public virtual void ShowDetails()
         {
-            Console.WriteLine($"Vehicle: {Year} {Make} {Model}");
-        }
-    }
-
-    class Car : Vehicle
-    {
-        public string FuelType { get; set; }
-        public int SittingCapacity { get; set; }
-
-        public Car(string make, string model, int year, int speed, string fuelType, int sittingCapacity) : base(make, model, year, speed)
-        {
-            FuelType = fuelType;
-            SittingCapacity = sittingCapacity;
-        }
-
-        public override void ShowDetails()
-        {
-            base.ShowDetails();
             Console.WriteLine($"Fuel Type: {FuelType} Sitting Capacity: {SittingCapacity}");
         }
 
         
-        public override void Run()
+        public  void Run()
         {
             Console.WriteLine("Ruuning at speed of " + Speed);
 
