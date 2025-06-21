@@ -1,4 +1,5 @@
 ﻿using C__Fundamentals.Basic.Functions;
+using C__Fundamentals.Topics.Arrays;
 using C__Fundamentals.Topics.OOPM;
 using System;
 using System.Collections.Generic;
@@ -10,26 +11,25 @@ namespace C__Fundamentals.Basic
 {
     internal class MainClass
     {
-
         static void Main()
         {
-
-         
-
             Console.WriteLine();
 
-            IVehicle c = new Car("Tata", "Nexon", 2020, 200, "Gas", 7);
-            c.ShowDetails();
-            c.Run();
-            Console.WriteLine();
+            int[] arr = { 2, 3, 54, 6, 7, 3 };
+            int[][] jaggedArray = new int[4][]{
+        new int[] { 25, 45, 41, 78, 34 },
+        new int[] { 4, 52, 36, 15, 27, 73 },
+        new int[] { 2, 5, 28, 31, 47  },
+        new int[] { 13, 53, 72  }
+        }; ;
 
-            IVehicle ev = new ElectricVehicle("Tata", "Nexon", 2020, 250, "Gas", 7,"250Kwh");
-            ev.ShowDetails();
-            ev.Run();
+            ExampleArray.Test();
 
-
-
+            
+            ExampleArray.PrintMinimum(arr);
+            ExampleArray.IterateMultiDimensionalArray(jaggedArray);
+             
+            Console.WriteLine("Fruits array accessed successfully." + String.Join(',', ExampleArray.fruits));
         }
-
     }
 }

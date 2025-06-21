@@ -12,7 +12,7 @@ namespace C__Fundamentals.Topics.OOPM
         string name;
         int salary;
         string department;
-        public int age;
+        private int age;
 
         public int Age
         {
@@ -30,12 +30,12 @@ namespace C__Fundamentals.Topics.OOPM
         } 
 
 
-        public void displayName()
+        public void DisplayName()
         {
             Console.WriteLine("Employee Name is " + name);
         }
 
-        public void displaySalary()
+        public void DisplaySalary()
         {
             Console.WriteLine("Employee salary is " + salary);
         }

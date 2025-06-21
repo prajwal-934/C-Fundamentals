@@ -21,6 +21,9 @@ namespace C__Fundamentals.Topics.OOPM
 
     class Car : IVehicle
     {
+
+        
+
         public string FuelType { get; set; }
         public int SittingCapacity { get; set; }
         public string Make { get; set; }
@@ -28,6 +31,11 @@ namespace C__Fundamentals.Topics.OOPM
         public int Year { get; set; }
         public int Speed { get; set; }
 
+
+        static public int noOfTires = 3;
+
+        
+       
 
         public Car(string make, string model, int year, int speed, string fuelType, int sittingCapacity)
         {
@@ -42,6 +50,7 @@ namespace C__Fundamentals.Topics.OOPM
         public virtual void ShowDetails()
         {
             Console.WriteLine($"Fuel Type: {FuelType} Sitting Capacity: {SittingCapacity}");
+            Console.WriteLine(this.Make);
         }
 
         
