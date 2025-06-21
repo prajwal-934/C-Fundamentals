@@ -10,7 +10,7 @@ namespace C__Fundamentals.Topics.OOPM
     {
         public string Make { get; set; }
         public string Model { get; set; }
-        public int Year { get; set; }
+        public int Year { get;  }
         public int Speed { get; set; }
 
         public  void Run();
@@ -28,7 +28,7 @@ namespace C__Fundamentals.Topics.OOPM
         public int SittingCapacity { get; set; }
         public string Make { get; set; }
         public string Model { get; set; }
-        public int Year { get; set; }
+        public int Year { get; }
         public int Speed { get; set; }
 
 
@@ -51,7 +51,7 @@ namespace C__Fundamentals.Topics.OOPM
         {
             Console.WriteLine($"Fuel Type: {FuelType} Sitting Capacity: {SittingCapacity}");
             Console.WriteLine(this.Make);
-        }
+        } 
 
         
         public  void Run()
