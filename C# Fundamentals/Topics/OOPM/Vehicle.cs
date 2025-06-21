@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace C__Fundamentals.Topics.OOPM
 {
-    internal class Vehicle
+    internal abstract class Vehicle
     {
         public string Make { get; set; }
         public string Model { get; set; }
@@ -21,10 +21,8 @@ namespace C__Fundamentals.Topics.OOPM
             Speed = speed;
         }
 
-        public void Run()
-        {
-            Console.WriteLine("Vehicle is running at speed of " + Speed);
-        }
+        public abstract void Run();
+    
 
         public virtual void ShowDetails()
         {
@@ -48,6 +46,13 @@ namespace C__Fundamentals.Topics.OOPM
             base.ShowDetails();
             Console.WriteLine($"Fuel Type: {FuelType} Sitting Capacity: {SittingCapacity}");
         }
+
+        
+        public override void Run()
+        {
+            Console.WriteLine("Ruuning at speed of " + Speed);
+
+        }
     }
 
 
@@ -62,7 +67,7 @@ namespace C__Fundamentals.Topics.OOPM
             BatteryCapacity = batteryCapacity;
         }
 
-        public override void ShowDetails()
+        public override void ShowDetails() 
         {
             base.ShowDetails();
             Console.WriteLine($"Battery Capacity: {BatteryCapacity}");

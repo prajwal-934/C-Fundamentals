@@ -14,18 +14,20 @@ namespace C__Fundamentals.Basic
         static void Main()
         {
 
-            Vehicle v = new Vehicle("Tata", "Nexon", 2020, 200);
-            v.ShowDetails();
+         
 
             Console.WriteLine();
 
-            Car c = new Car("Tata", "Nexon", 2020, 200, "Gas", 7);
+            Vehicle c = new Car("Tata", "Nexon", 2020, 200, "Gas", 7);
             c.ShowDetails();
-
+            c.Run();
             Console.WriteLine();
 
-            ElectricVehicle ev = new ElectricVehicle("Tata", "Nexon", 2020, 200, "Gas", 7,"250Kwh");
+            Vehicle ev = new ElectricVehicle("Tata", "Nexon", 2020, 250, "Gas", 7,"250Kwh");
             ev.ShowDetails();
+            ev.Run();
+
+
 
         }
 
