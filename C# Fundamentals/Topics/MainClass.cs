@@ -2,6 +2,8 @@
 using C__Fundamentals.Topics.Arrays;
 using C__Fundamentals.Topics.ExceptionHandling;
 using C__Fundamentals.Topics.OOPM;
+using C__Fundamentals.Topics.OOPM.Banking_Application;
+using C__Fundamentals.Topics.Practice_Problems;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,32 +21,13 @@ namespace C__Fundamentals.Basic
        
         static void Main()
         {
-            Address address = new Address("34 Mhow", "Bhopal", "Madhya Pradesh", 343442);
-            Employee employee = new Employee("Emp123", "John", 32434, "IT", address);
-            employee.DisplayName();
-            Doctor.Test();
-            Outer.Inner2.Test();
+            Account account1 = new SavingsAccount("Sam", 10000);
+            Account account2 = new SavingsAccount("Maddy", 20000);
+            Account account3 = new SavingsAccount("Rina", 30000);
 
-            Outer.Inner2 inner = new Outer.Inner2();
-            inner.Run();
-
-
-            string str = "Hel,lo";
-            Console.WriteLine("----------Strings--------");
-            Console.WriteLine(str.ToLower());
-            Console.WriteLine(str.Replace("o","e"));
-            Console.WriteLine(String.Concat(str," Wor,ld"));
-            string[] s2 = str.Split(',');
-            Console.WriteLine("Split strings.....");
-            foreach(string s3 in s2)
-            {
-                Console.WriteLine(s3);
-            }
-
-            ExceptionExample.Test();
-            TestUserDefinedException.TestException();
-
-           
+            account1.Withdraw(5000);
+            account1.DisplayAccountInfo();
+            
 
         }
     }

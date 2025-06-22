@@ -17,6 +17,7 @@ namespace C__Fundamentals.Topics.OOPM
 
 
         public void ShowDetails();
+
     }
 
     class Car : IVehicle
