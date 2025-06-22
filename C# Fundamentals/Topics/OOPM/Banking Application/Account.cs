@@ -15,6 +15,10 @@ namespace C__Fundamentals.Topics.OOPM.Banking_Application
 
         public Account(string customerName, double initialBalance)
         {
+            if(initialBalance < 0)
+            {
+                throw new ArgumentException("Initial Balance must be greater than zero");
+            }
             this.accountNumber = ++accountNumberSeed;
             this.customerName = customerName;
             this.balance = initialBalance;
@@ -24,7 +28,7 @@ namespace C__Fundamentals.Topics.OOPM.Banking_Application
         public string GetCustomerName() => customerName;
         public double GetBalance() => balance;
 
-        public virtual void Deposit(int amount)
+        public virtual void Deposit(double amount)
         {
             if (amount > 0)
             {
@@ -33,7 +37,7 @@ namespace C__Fundamentals.Topics.OOPM.Banking_Application
             }
         }
 
-        public abstract void Withdraw(int amount);
+        public abstract void Withdraw(double amount);
 
         public void DisplayAccountInfo()
         {

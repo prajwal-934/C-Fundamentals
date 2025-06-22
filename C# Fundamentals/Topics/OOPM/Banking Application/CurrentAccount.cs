@@ -12,7 +12,7 @@ namespace C__Fundamentals.Topics.OOPM.Banking_Application
         {
         }
 
-        public override void Withdraw(int amount)
+        public override void Withdraw(double amount)
         {
             if(amount <= balance)
             {

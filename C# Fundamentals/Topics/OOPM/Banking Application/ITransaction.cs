@@ -8,7 +8,7 @@ namespace C__Fundamentals.Topics.OOPM.Banking_Application
 {
     internal interface ITransaction
     {
-        public void Deposit(int amount);
-        public void Withdraw(int amount);
+        public void Deposit(double amount);
+        public void Withdraw(double amount);
     }
 }
