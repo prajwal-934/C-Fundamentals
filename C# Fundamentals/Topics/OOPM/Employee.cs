@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace C__Fundamentals.Topics.OOPM
 {
-    internal class Employee
+    internal  class  Employee
     {
         string employeeId;
         string name;
@@ -37,11 +37,6 @@ namespace C__Fundamentals.Topics.OOPM
             Console.WriteLine("Employee Name is " + name);
             address.ShowAddress();
         }
-
-
-
-
-
 
         public void DisplaySalary()
         {
