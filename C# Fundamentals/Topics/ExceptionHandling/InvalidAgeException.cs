@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace C__Fundamentals.Topics.ExceptionHandling
 {
-    internal class InvalidAgeException: Exception
+    internal class InvalidAgeException: DivideByZeroException
     {
         public int Age { get; set; }  
         public InvalidAgeException(string message , int enteredAge):base(message)
@@ -30,14 +30,16 @@ namespace C__Fundamentals.Topics.ExceptionHandling
         {
             try
             {
-                Validate(61);
+                Validate(11);
             }
-            catch (InvalidAgeException e)
+            catch (Exception e)
             {
                 Console.WriteLine($"Exception: {e.Message}");
-                Console.WriteLine($"Entered Age: {e.Age}");
+               
                
             }
         }
+
+
     }
 }

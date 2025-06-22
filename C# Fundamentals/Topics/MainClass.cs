@@ -44,7 +44,18 @@ namespace C__Fundamentals.Basic
             ExceptionExample.Test();
             TestUserDefinedException.TestException();
 
-           
+          
+                int a = int.MaxValue;
+                int b = a + 1;
+                Console.WriteLine(b);
+
+            checked
+            {
+                double c = double.MaxValue;
+                int d = (int)c;
+                Console.WriteLine("Value of d is " + d);
+            }
+            
 
         }
     }
