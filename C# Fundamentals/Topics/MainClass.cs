@@ -34,7 +34,8 @@ namespace C__Fundamentals.Basic
                     Console.WriteLine("3. Deposit");
                     Console.WriteLine("4. Withdraw");
                     Console.WriteLine("5. View Account Info");
-                    Console.WriteLine("6. Exit");
+                    Console.WriteLine("6. Delete Account");
+                    Console.WriteLine("7. Exit");
                     Console.WriteLine("Choose an option");
                     choice = Convert.ToInt32(Console.ReadLine());
 
@@ -170,16 +171,46 @@ namespace C__Fundamentals.Basic
 
         static void DeleteAccount()
         {
-            Console.WriteLine("Enter Account number to delete");
-            int accountNumber = Convert.ToInt32(Console.ReadLine());
-            Account account = FindAccount(accountNumber);
-            if(account == null)
+            try
             {
-                Console.WriteLine("Account Not found");
-                return;
+                Console.WriteLine("Enter Account number to delete:");
+                int accountNumber = Convert.ToInt32(Console.ReadLine());
+
+                bool found = false;
+
+                for (int i = 0; i < currentAccountCounts; i++)
+                {
+                    if (accounts[i] != null && accounts[i].GetAccountNumber() == accountNumber)
+                    {
+                        Console.Write("Are you sure you want to delete your account? (Y/N): ");
+                        string confirmation = Console.ReadLine();
+
+                        if (confirmation.Trim().ToUpper() == "Y")
+                        {
+                            accounts[i] = null;
+                            Console.WriteLine("Account deleted successfully.");
+                        }
+                        else
+                        {
+                            Console.WriteLine("Account deletion canceled.");
+                        }
+
+                        found = true;
+                        break;
+                    }
+                }
+
+                if (!found)
+                {
+                    Console.WriteLine("Account not found.");
+                }
             }
-                
+            catch (FormatException)
+            {
+                Console.WriteLine("Invalid input. Please enter a valid account number.");
+            }
         }
+
 
     }
 }
