@@ -9,9 +9,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Basic\Classes And Objects\**" />
-    <EmbeddedResource Remove="Basic\Classes And Objects\**" />
-    <None Remove="Basic\Classes And Objects\**" />
+    <Compile Remove="Topics\Classes And Objects\**" />
+    <EmbeddedResource Remove="Topics\Classes And Objects\**" />
+    <None Remove="Topics\Classes And Objects\**" />
   </ItemGroup>
 
 </Project>

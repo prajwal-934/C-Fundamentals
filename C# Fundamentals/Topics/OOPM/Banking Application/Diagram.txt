@@ -1,0 +1,45 @@
+               +----------------------+
+               |     <<interface>>    |
+               |     ITransaction     |
+               +----------------------+
+               | +Deposit(amount)     |
+               | +Withdraw(amount)    |
+               +----------^-----------+
+                          |
+                          |
+               +----------------------+
+               |   <<abstract>>       |
+               |       Account        |
+               +----------------------+
+               | -accountNumber: int  |
+               | -customerName: string|
+               | -balance: double     |
+               | -accountNumberSeed   |
+               +----------------------+
+               | +GetAccountNumber()  |
+               | +GetCustomerName()   |
+               | +GetBalance()        |
+               | +Deposit(amount)     |
+               | +Withdraw(amount)    | <- abstract
+               | +DisplayAccountInfo()|
+               +----------^-----------+
+                         / \
+                        /   \
+                       /     \
+        +----------------+  +-------------------+
+        | SavingsAccount |  |  CurrentAccount   |
+        +----------------+  +-------------------+
+        | -minBalance    |  | (no extra fields) |
+        +----------------+  +-------------------+
+        | +Withdraw()    |  | +Withdraw()       |
+        +----------------+  +-------------------+
+
+
+
+==== Bank Menu ====
+1. Create Savings Account
+2. Create Current Account
+3. Deposit
+4. Withdraw
+5. View Account Info
+6. Exit
