@@ -24,7 +24,7 @@ namespace C__Fundamentals.Basic
        
         public static void Main()
         {
-            ExampleList.TestList();
+            ExampleHashSet.TestHashSet();
 
         }
 

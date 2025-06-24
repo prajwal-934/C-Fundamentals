@@ -1,0 +1,49 @@
+most commonly used methods
+
+
+
+Dictionary
+
+
+| Method / Property                           | Description                      | Example                                           |
+| ------------------------------------------- | -------------------------------- | ------------------------------------------------- |
+| **Add(TKey key, TValue value)**             | Adds a new key-value pair        | `dict.Add("id1", "John");`                        |
+| **ContainsKey(TKey key)**                   | Checks if key exists             | `dict.ContainsKey("id1");`                        |
+| **ContainsValue(TValue value)**             | Checks if value exists           | `dict.ContainsValue("John");`                     |
+| **Remove(TKey key)**                        | Removes pair by key              | `dict.Remove("id1");`                             |
+| **TryGetValue(TKey key, out TValue value)** | Tries to get value by key safely | `if(dict.TryGetValue("id1", out var name)) {}`    |
+| **Keys** (Property)                         | Gets a collection of all keys    | `foreach(var key in dict.Keys) { ... }`           |
+| **Values** (Property)                       | Gets a collection of all values  | `foreach(var val in dict.Values) { ... }`         |
+| **Clear()**                                 | Removes all pairs                | `dict.Clear();`                                   |
+| **Count** (Property)                        | Number of pairs                  | `int n = dict.Count;`                             |
+| **Indexer**                                 | Get or set value by key          | `dict["id1"] = "Sam"; string name = dict["id1"];` |
+
+
+
+HashSet
+
+| Method/Property      | Description                                  |
+| -------------------- | -------------------------------------------- |
+| `Add(item)`          | Adds the item if it’s not already in the set |
+| `Contains(item)`     | Checks if the item exists in the set         |
+| `Remove(item)`       | Removes the item                             |
+| `Clear()`            | Removes all elements                         |
+| `Count`              | Gets the number of elements                  |
+| `SetEquals(set)`     | Checks if two sets are equal                 |
+| `UnionWith(set)`     | Adds all items from another set              |
+| `IntersectWith(set)` | Keeps only items present in both sets        |
+| `ExceptWith(set)`    | Removes items that exist in another set      |
+IsSubsetOf
+IsSupersetOf
+
+Queue
+| Method / Property | Description                                                            | Example Result                |
+| ----------------- | ---------------------------------------------------------------------- | ----------------------------- |
+| `Enqueue(item)`   | Adds an item to the **end** of the queue                               | Adds to tail (back)           |
+| `Dequeue()`       | Removes and returns the **first** item (FIFO)                          | Removes from head (front)     |
+| `Peek()`          | Returns the first item **without removing** it                         | Look at head without removing |
+| `Count`           | Returns the **number of items** in the queue                           | `queue.Count => 3`            |
+| `Clear()`         | Removes **all items** from the queue                                   | Queue becomes empty           |
+| `Contains(item)`  | Returns `true` if item exists in the queue                             | Useful for conditional checks |
+| `ToArray()`       | Converts the queue into an array                                       | `[item1, item2, item3]`       |
+| `TrimExcess()`    | Reduces memory overhead by resizing the internal storage (rarely used) | Useful after many dequeues    |

@@ -13,30 +13,41 @@ namespace C__Fundamentals.Topics.Collections
         public static void TestArrayList()
         {
             ArrayList list = new ArrayList();
-            ArrayList list2 = new ArrayList();
-            list.Capacity = 4;
-            
-            list.Add(1);
-            list.Add(2);
-            list.Add(3);
-            list.Add(4);
-            list.Add(5);
-            list.Add(5);
-            list.Reverse();
-            //ArrayList newList = (ArrayList)list.Clone();
-            var result = list.Contains("Hi");
-            Console.WriteLine(result);
-            var returnedList = list.GetRange(0, 3);
-            //list.AddRange(newList);
-            Console.WriteLine(String.Join(",",returnedList.ToArray()));
-            Console.WriteLine("Count is "+list.Count);
-            Console.WriteLine("Index is "+list.IndexOf("Hi"));
-            list.Sort();
-
-            foreach (var item in list)
+            int choice = 0;
+            var input=0;
+            do
             {
-                Console.WriteLine(item);
+                Console.WriteLine("----------MENU----------");
+                Console.WriteLine("1. Add Elements");
+                Console.WriteLine("2. Remove Elements");
+                Console.WriteLine("3. List Elements");
+                Console.WriteLine("4. Number of Elements");
+                Console.WriteLine("5. Exit");
+
+                choice = Convert.ToInt32(Console.ReadLine());
+                switch (choice)
+                {
+                    case 1:
+                        input = Convert.ToInt32(Console.ReadLine());
+                        list.Add(input);
+                        break;
+                    case 2:
+                        input = Convert.ToInt32(Console.ReadLine());
+                        list.Remove(input);
+                        break;
+                    case 3:
+                        Console.WriteLine("Elements: "+ String.Join(",",list.ToArray()));
+                        break;
+                    case 4:
+                        Console.WriteLine("Total number of element is "+list.Count);
+                        break;
+                    case 5:
+                        Console.WriteLine("Exiting...");
+                        break;
+                }
+
             }
+            while (choice!=5);
         }
         
         
