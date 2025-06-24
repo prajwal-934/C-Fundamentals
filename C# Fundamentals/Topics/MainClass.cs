@@ -24,7 +24,8 @@ namespace C__Fundamentals.Basic
        
         public static void Main()
         {
-            ExampleHashSet.TestHashSet();
+           
+            ExampleStack.TestStack();
 
         }
 

@@ -47,3 +47,14 @@ Queue
 | `Contains(item)`  | Returns `true` if item exists in the queue                             | Useful for conditional checks |
 | `ToArray()`       | Converts the queue into an array                                       | `[item1, item2, item3]`       |
 | `TrimExcess()`    | Reduces memory overhead by resizing the internal storage (rarely used) | Useful after many dequeues    |
+
+| Method / Property | Description                                       |
+| ----------------- | ------------------------------------------------- |
+| `Push(item)`      | Adds an item to the top of the stack              |
+| `Pop()`           | Removes and returns the top item                  |
+| `Peek()`          | Returns the top item without removing it          |
+| `Contains(item)`  | Checks if the item exists                         |
+| `Clear()`         | Removes all items                                 |
+| `Count`           | Returns the number of items in the stack          |
+| `ToArray()`       | Copies stack to an array (top becomes first item) |
+| `TrimExcess()`    | Reduces memory overhead                           |
