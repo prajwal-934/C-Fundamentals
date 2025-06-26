@@ -1,7 +1,10 @@
 ﻿using C__Fundamentals.Basic.Functions;
 using C__Fundamentals.Topics.Arrays;
 using C__Fundamentals.Topics.Collections;
+using C__Fundamentals.Topics.Delegates;
 using C__Fundamentals.Topics.ExceptionHandling;
+using C__Fundamentals.Topics.Generics;
+using C__Fundamentals.Topics.LINQ;
 using C__Fundamentals.Topics.OOPM;
 using C__Fundamentals.Topics.OOPM.Banking_Application;
 using C__Fundamentals.Topics.Practice_Problems;
@@ -17,15 +20,12 @@ namespace C__Fundamentals.Basic
 
     internal class MainClass
     {
-        public static int maxNoOfAccounts = 3;
-        static int currentAccountCounts = 0;
-        static Account[] accounts = new Account[maxNoOfAccounts];
+     
 
        
         public static void Main()
         {
-           
-            ExampleStack.TestStack();
+            ExampleLinq.TestLinq();
 
         }
 
