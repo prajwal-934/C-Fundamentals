@@ -5,6 +5,7 @@ using C__Fundamentals.Topics.Delegates;
 using C__Fundamentals.Topics.ExceptionHandling;
 using C__Fundamentals.Topics.Generics;
 using C__Fundamentals.Topics.LINQ;
+using C__Fundamentals.Topics.LINQ.Data;
 using C__Fundamentals.Topics.OOPM;
 using C__Fundamentals.Topics.OOPM.Banking_Application;
 using C__Fundamentals.Topics.Practice_Problems;
@@ -25,8 +26,9 @@ namespace C__Fundamentals.Basic
        
         public static void Main()
         {
-            ExampleLinq.TestLinq();
-
+            List<Company> companies =  DataInit.TestDataInit();
+            Console.WriteLine($"count of companies is {companies.Count}");
+            ExampleLinqQuestions.TestQuestions();
         }
 
 

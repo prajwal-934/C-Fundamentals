@@ -45,6 +45,7 @@ namespace C__Fundamentals.Topics.LINQ
             int ageSum = people.Sum((person) => person.Age);
             double avgAge = people.Average(person => person.Age);
             int maxAge = people.Max(person => person.Age);
+            var maxAgeObj = people.MaxBy((person) => person.Age);
 
             //checking any, all, contains
             bool hasDavid = people[0].Name.Contains("Alice");
@@ -69,6 +70,11 @@ namespace C__Fundamentals.Topics.LINQ
 
             Console.WriteLine("Employee Type " + employees[0].Dept);
 
+            var result = people.DistinctBy((person) => person.City).ToList();
+            result.ForEach((item) => Console.WriteLine(item.ToString()));
+
+            Console.WriteLine("Max age object is:"+ maxAgeObj.ToString() );
+
 
             Console.WriteLine("---------Printing in Loop------------");
 
@@ -76,6 +82,7 @@ namespace C__Fundamentals.Topics.LINQ
             {
                 Console.WriteLine(item.ToString());
             }
+
         }
     }
 }
