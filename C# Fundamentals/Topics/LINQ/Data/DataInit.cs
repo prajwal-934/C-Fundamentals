@@ -51,7 +51,7 @@ namespace C__Fundamentals.Topics.LINQ.Data
                             Manager = "Karen",
                             Employees = new List<Employee>
                             {
-                                new Employee { FullName = "Tom Wells", Age = 45, Salary = 95000, IsRemote = false },
+                                new Employee { FullName = "Sara Jones", Age = 45, Salary = 95000, IsRemote = false },
                                 new Employee { FullName = "Nina Zhang", Age = 29, Salary = 67000, IsRemote = true },
                                 new Employee { FullName = "Priya Kapoor", Age = 40, Salary = 88000, IsRemote = false }
                             }

@@ -77,6 +77,71 @@ namespace C__Fundamentals.Topics.LINQ
                     GroupBy(d => d.Name)
                 });
 
+            //SET
+
+            var remoteEmp =
+                companies.SelectMany((company) => company.Departments)
+                .SelectMany(dept => dept.Employees)
+                .Where(e => e.IsRemote);
+
+            var onSiteEmp =
+                companies.SelectMany((company) => company.Departments)
+                .SelectMany(dept => dept.Employees)
+                .Where(e => e.IsRemote == false);
+
+            //select remote emp from finance and engg dept
+
+            var remoteDeptEmp =
+                companies
+                .SelectMany((company) => company.Departments)
+                .Where((dept) => dept.Name == "Finance" || dept.Name == "Engineering")
+                .Select(d => new
+                {
+                    d.Name,
+                    RemoteEmployees = d.Employees.Where(e => e.IsRemote)
+                });
+
+
+            var duplicates = companies
+            .SelectMany(c => c.Departments)
+            .SelectMany(d => d.Employees)
+            .GroupBy(e => e.FullName)
+            .Where(g => g.Count() > 1)
+            .SelectMany(g => g);
+
+            var test = companies.SelectMany((c) => c.Departments);
+            
+
+
+            Console.WriteLine("---remote---");
+            foreach (var item in remoteDeptEmp)
+            {
+                Console.WriteLine(item.Name);
+                foreach (var item1 in item.RemoteEmployees)
+                {
+                    Console.WriteLine(item1.ToString());
+                }
+            }
+            var allEmp = remoteEmp.Union(onSiteEmp);
+
+            var test1 = companies
+            .SelectMany(c => c.Departments)
+            .SelectMany(d => d.Employees, (d, e) => new { Dept = d.Name, Emp = e })
+            .Where(x => x.Emp.IsRemote);
+
+            foreach (var item in test1)
+            {
+                Console.WriteLine(item.Dept+ " Emp Details is "+ item.Emp.ToString());
+            }
+
+
+
+
+
+            Console.WriteLine("Union of emp count "+allEmp.Count());
+
+            Console.WriteLine("Count of remote emp "+remoteEmp.Count());
+
 
             Console.WriteLine("Type of "+allEmployees.GetType());
             Console.WriteLine("----result-----");
