@@ -9,10 +9,10 @@ namespace C__Fundamentals.Topics.Solid
     internal class OrderProcessor
     {
         private readonly OrderValidator orderValidator;
-        private readonly OrderSaver orderSaver;
+        private readonly IOrderSaver[] orderSaver;
         private readonly OrderNotificationSender orderNotificationSender;
 
-        public OrderProcessor(OrderValidator orderValidator, OrderSaver orderSaver, OrderNotificationSender orderNotificationSender)
+        public OrderProcessor(OrderValidator orderValidator, IOrderSaver[] orderSaver, OrderNotificationSender orderNotificationSender)
         {
             this.orderValidator = orderValidator;
             this.orderSaver = orderSaver;
@@ -22,10 +22,28 @@ namespace C__Fundamentals.Topics.Solid
         public void process()
         {
             orderValidator.Validate();
-            orderSaver.Save(null);
+            foreach (var item in orderSaver)
+            {
+                item.Save(null);
+            }
             orderNotificationSender.SendNotification();
         }
 
+    }
+
+    public interface IOrderSaver
+    {
+        public void Save(string order);
+    }
+
+    public interface IOrderDeleter
+    {
+        public void Delete(int id);
+    }
+
+    public interface IOrderReader
+    {
+        string Read(int id);
     }
 
     class OrderValidator
@@ -33,10 +51,17 @@ namespace C__Fundamentals.Topics.Solid
         public void Validate() { }
     }
 
-    class OrderSaver
+    class DBOrderSaver : IOrderSaver
     {
         public void Save(string order) { }
     }
+
+
+    class CacheOrderSaver : IOrderSaver
+    {
+        public void Save(string order) { }
+    }
+
 
     class OrderNotificationSender
     {
