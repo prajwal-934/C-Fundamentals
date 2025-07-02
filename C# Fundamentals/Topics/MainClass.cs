@@ -11,6 +11,7 @@ using C__Fundamentals.Topics.Multithreading;
 using C__Fundamentals.Topics.OOPM;
 using C__Fundamentals.Topics.OOPM.Banking_Application;
 using C__Fundamentals.Topics.Practice_Problems;
+using C__Fundamentals.Topics.Solid;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -28,14 +29,9 @@ namespace C__Fundamentals.Basic
        
         public static void Main()
         {
-            Hammer hammer = new Hammer();
-            DrillMachine drillMachine = new DrillMachine(); 
-            Builder builder = new Builder();
-            builder.Hammer = hammer;
-            builder.DrillMachine = drillMachine;
-            builder.BuildHouse();
 
 
+            LSP_Problem.TestLSPIssue();
         }
 
 

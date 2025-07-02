@@ -6,6 +6,17 @@ using System.Threading.Tasks;
 
 namespace C__Fundamentals.Topics.Dependency_Injection.Constructor_Injection
 {
+
+    interface IToolBuilder
+    {
+
+        public void SetHammer(Hammer hammer);
+
+        public void SetDrillMachine(DrillMachine drillMachine);
+
+    }
+
+
     class Hammer
     {
 
@@ -24,19 +35,29 @@ namespace C__Fundamentals.Topics.Dependency_Injection.Constructor_Injection
     }
 
 
-    internal class Builder
+    internal class Builder : IToolBuilder
     {
-        public Hammer Hammer {get; set;}
-        public DrillMachine DrillMachine { get; set; }
+
+        Hammer _hammer;
+        DrillMachine _drillMachine;
         
         public Builder()
         {
         }
+        
+        public void SetHammer(Hammer hammer)
+        {
+            _hammer = hammer;
+        }
+        public void SetDrillMachine(DrillMachine drillMachine)
+        {
+            _drillMachine = drillMachine;   
+        }
 
         public void BuildHouse()
         {
-            Hammer.Use();
-            DrillMachine.Use();
+            _hammer.Use();
+            _drillMachine.Use();
             Console.WriteLine("Building House..");
         }
     }
