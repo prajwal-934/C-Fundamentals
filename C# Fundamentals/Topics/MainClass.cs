@@ -2,6 +2,7 @@
 using C__Fundamentals.Topics.Arrays;
 using C__Fundamentals.Topics.Collections;
 using C__Fundamentals.Topics.Delegates;
+using C__Fundamentals.Topics.Dependency_Injection.Constructor_Injection;
 using C__Fundamentals.Topics.ExceptionHandling;
 using C__Fundamentals.Topics.Generics;
 using C__Fundamentals.Topics.LINQ;
@@ -27,7 +28,11 @@ namespace C__Fundamentals.Basic
        
         public static void Main()
         {
-            ExampleMultithreading.TestMultiThreading();
+            Hammer hammer = new Hammer();
+            DrillMachine drillMachine = new DrillMachine(); 
+            Builder builder = new Builder(hammer,drillMachine);
+
+            builder.BuildHouse();
 
 
         }
