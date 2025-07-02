@@ -30,8 +30,9 @@ namespace C__Fundamentals.Basic
         {
             Hammer hammer = new Hammer();
             DrillMachine drillMachine = new DrillMachine(); 
-            Builder builder = new Builder(hammer,drillMachine);
-
+            Builder builder = new Builder();
+            builder.Hammer = hammer;
+            builder.DrillMachine = drillMachine;
             builder.BuildHouse();
 
 

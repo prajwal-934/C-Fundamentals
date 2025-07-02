@@ -26,19 +26,17 @@ namespace C__Fundamentals.Topics.Dependency_Injection.Constructor_Injection
 
     internal class Builder
     {
-        Hammer _hameer;
-        DrillMachine _drillMachine;
+        public Hammer Hammer {get; set;}
+        public DrillMachine DrillMachine { get; set; }
         
-        public Builder(Hammer hammer , DrillMachine drillMachine)
+        public Builder()
         {
-            _hameer = hammer;
-            _drillMachine = drillMachine;
         }
 
         public void BuildHouse()
         {
-            _hameer.Use();
-            _drillMachine.Use();
+            Hammer.Use();
+            DrillMachine.Use();
             Console.WriteLine("Building House..");
         }
     }
